@@ -165,16 +165,15 @@ def load_pcd(file_in):
 def get_patch_radius(grid_res, epsilon):
     return (1.0 + epsilon) / grid_res
 
-
+# n_jobs is deprecated
 def get_patch_kdtree(
         kdtree: spatial.cKDTree, rng: np.random.RandomState,
-        query_point, patch_radius, points_per_patch, n_jobs):
+        query_point, patch_radius, points_per_patch):#, n_jobs):
 
     if patch_radius <= 0.0:
-        # n_jobs is deprecated
         pts_dists_ms, patch_pts_ids = kdtree.query(x=query_point, k=points_per_patch)#, n_jobs=n_jobs)
     else:
-        patch_pts_ids = kdtree.query_ball_point(x=query_point, r=patch_radius, n_jobs=n_jobs)
+        patch_pts_ids = kdtree.query_ball_point(x=query_point, r=patch_radius)#, n_jobs=n_jobs)
     patch_pts_ids = np.array(patch_pts_ids, dtype=np.int32)
     point_count = patch_pts_ids.shape[0]
 

@@ -335,7 +335,7 @@ class PointcloudPatchDataset(data.Dataset):
             patch_pts_ids = point_cloud.get_patch_kdtree(
                 kdtree=shape.kdtree, rng=self.rng, query_point=query_point,
                 patch_radius=self.patch_radius,
-                points_per_patch=self.points_per_patch, n_jobs=1)
+                points_per_patch=self.points_per_patch)#, n_jobs=1)
 
             # find -1 ids for padding
             patch_pts_pad_ids = patch_pts_ids == -1

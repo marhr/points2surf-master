@@ -212,7 +212,7 @@ def implicit_surface_to_mesh(query_dist_ms, query_pts_ms,
         # reconstruct mesh from volume using marching cubes
         from skimage import measure
         start = time.time()
-        v, f, normals, values = measure.marching_cubes_lewiner(volume, 0)
+        v, f, normals, values = measure.marching_cubes(volume, 0)
         end = time.time()
         print('Marching Cubes Lewiner took: {}'.format(end - start))
 

@@ -14,7 +14,7 @@ python full_eval.py \
     --batchSize 501 \
     --workers 7 \
     --cache_capacity 5 \
-    --query_grid_resolution None \ #256 \
+    --query_grid_resolution 256 \
     --epsilon 3 \
     --certainty_threshold 13 \
     --sigma 5 \

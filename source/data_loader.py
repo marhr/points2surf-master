@@ -306,7 +306,7 @@ class PointcloudPatchDataset(data.Dataset):
                     self.shape_patch_count.append(grid_pts_near_surf_ms.shape[0])
 
                     # un-comment to get a debug output for the necessary query points
-                    # mesh_io.write_off('debug/{}'.format(shape_name + '.off'), grid_pts_near_surf_ms, [])
+                    mesh_io.write_off('debug/{}'.format(shape_name + '.off'), grid_pts_near_surf_ms, [])
                     # self.shape_patch_count.append(query_grid_resolution ** 3)  # full grid
                 else:
                     query_dist_filename = os.path.join(self.root, '05_query_pts', shape_name + '.ply.npy')
